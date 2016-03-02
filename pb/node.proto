@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package pb;
+
+service Node {
+  rpc RunCommand (RunCommandRequest) returns (RunCommandResponse) {}
+}
+
+message RunCommandRequest {
+  string command = 1;
+  map<string, string> params = 2;
+}
+
+message RunCommandResponse {
+  string message = 1;
+  bool ok = 2;
+}

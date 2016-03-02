@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+
+service Controller {
+  rpc RegisterNode (RegisterNodeRequest) returns (NodeStatus) {}
+}
+
+message RegisterNodeRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message NodeStatus {
+  bool ok = 1;
+}
